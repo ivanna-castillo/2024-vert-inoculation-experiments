@@ -46,14 +46,8 @@ sporeconcentration_wide <- sporeconcentration_wide %>%
          "04/12/2024" = "12/04/2024",
          "04/15/2024" = "15/04/2024")
 
-##Calculate dpi
-
-#first make a vector of the dates
-dates <- c("03/29/2024", "04/01/2024", "04/04/2024", "04/09/2024", "04/12/2024", "04/15/2024")
-
-#now subtract the inoculation date ( March 22nd, 2024) from each, to get the number of days post inoculation 
-dpi <- as.Date(dates, format = "%m/%d/%Y") - as.Date("03/22/2024", format = "%m/%d/%Y")
-
+#Now you get to admire your clean data
+View(sporeconcentration_wide)
 
 
 
