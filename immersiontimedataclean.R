@@ -49,5 +49,10 @@ immersiontime_wide <- immersiontime_wide %>%
 #Now you get to admire your clean data
 View(immersiontime_wide)
 
+#Making a new file from the clean data for the anova
+write.csv(immersiontime_wide, "sporeconcentration_wide_clean.csv", row.names = FALSE)
+
+#Making a new file from the cl"ean data for the ggplot (long format)
+write.csv(immersiontime, "sporeconcentration_long_clean.csv", row.names = FALSE)
 
 
