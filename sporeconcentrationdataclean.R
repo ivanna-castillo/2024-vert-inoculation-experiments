@@ -49,5 +49,11 @@ sporeconcentration_wide <- sporeconcentration_wide %>%
 #Now you get to admire your clean data
 View(sporeconcentration_wide)
 
+#Making a new file from the clean data for the anova
+write.csv(sporeconcentration_wide, "sporeconcentration_wide_clean.csv", row.names = FALSE)
+
+#Making a new file from the cl"ean data for the ggplot (long format)
+write.csv(sporeconcentration, "sporeconcentration_long_clean.csv", row.names = FALSE)
+
 
 
