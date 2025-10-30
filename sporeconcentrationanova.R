@@ -6,9 +6,10 @@ setwd('/Users/ikc6/Library/CloudStorage/OneDrive-CornellUniversity/Research_PhD/
 
 #load packages
 library(agricolae)
-#Remember that we are using the same data frame we made with the other script, so that
-#should have been loaded already. (sporeconcentration_wide)
 
+#We will use the clean spore concentration data in wide format. This will be retrieved
+#from the new file that was made in the cleaning data script. 
+sporeconcentration_wide <- read.csv("sporeconcentration_wide_clean.csv")
 
 ##LET'S CALCULATE AUDPC
 
