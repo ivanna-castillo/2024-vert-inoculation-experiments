@@ -6,9 +6,10 @@ setwd('/Users/ikc6/Library/CloudStorage/OneDrive-CornellUniversity/Research_PhD/
 
 #load packages
 library(agricolae)
-#Remember that we are using the same data frame we made with the other script, so that
-#should have been loaded already. (immersiontime_wide)
 
+#We will use the clean immersion time data in wide format. This will be retrieved
+#from the new file that was made in the cleaning data script. 
+immersiontime_wide <- read.csv("immersiontime_wide_clean.csv")
 
 ##LET'S CALCULATE AUDPC
 
