@@ -27,5 +27,5 @@ for (i in 1:nrow(severity_mean)) {
 #adding a legend and locating it 
 legend(x = 17,
        y = 40, legend = severity_mean$`sporeconcentration_wide$trt`,
-       col= colors, lty=1:1, cex=0.75)
+       col= colors, lty=1, cex=0.75)
 

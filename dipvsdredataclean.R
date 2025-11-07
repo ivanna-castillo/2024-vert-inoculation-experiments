@@ -16,9 +16,6 @@ dipvsdre <- read.csv("DIPVSDREDATAFINAL.csv", sep = ";")
 dipvsdre$disease_percentage <- (
   (dipvsdre$yellow + dipvsdre$dry) / (dipvsdre$total) *100)
 
-#make it become an integer so that it does not have decimal places
-dipvsdre$disease_percentage <- as.integer(dipvsdre$disease_percentage)
-
 #get rid of the columns that we don't need anymore
 dipvsdre$total <- NULL
 dipvsdre$wilt <- NULL
@@ -48,3 +45,12 @@ dipvsdre_wide <- dipvsdre_wide %>%
 
 #Now you get to admire your clean data
 View(dipvsdre_wide)
+
+#Making a new file from the clean data for the anova
+write.csv(dipvsdre_wide, "dipvsdre_wide_clean.csv", row.names = FALSE)
+
+#Making a new file from the cl"ean data for the ggplot (long format)
+write.csv(dipvsdre, "dipvsdre_long_clean.csv", row.names = FALSE)
+
+
+
