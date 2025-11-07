@@ -16,9 +16,6 @@ immersiontime <- read.csv("DIPTIMEDATAFINAL.csv", sep = ";")
 immersiontime$disease_percentage <- (
   (immersiontime$yellow + immersiontime$dry) / (immersiontime$total) *100)
 
-#make it become an integer so that it does not have decimal places
-immersiontime$disease_percentage <- as.integer(immersiontime$disease_percentage)
-
 #get rid of the columns that we don't need anymore
 immersiontime$total <- NULL
 immersiontime$wilt <- NULL
@@ -46,13 +43,17 @@ immersiontime_wide <- immersiontime_wide %>%
          "04/12/2024" = "12/04/2024",
          "04/15/2024" = "15/04/2024")
 
+#changing the cells that have 03/01/2024 in the immersiontime df, because it is incorrect
+immersiontime$date[immersiontime$date == "03/01/2024"] <- "01/04/2024" 
+immersiontime$date[immersiontime$date == "29/3/2024"] <- "29/03/2024" 
+
 #Now you get to admire your clean data
 View(immersiontime_wide)
 
 #Making a new file from the clean data for the anova
-write.csv(immersiontime_wide, "sporeconcentration_wide_clean.csv", row.names = FALSE)
+write.csv(immersiontime_wide, "immersiontime_wide_clean.csv", row.names = FALSE)
 
 #Making a new file from the cl"ean data for the ggplot (long format)
-write.csv(immersiontime, "sporeconcentration_long_clean.csv", row.names = FALSE)
+write.csv(immersiontime, "immersiontime_long_clean.csv", row.names = FALSE)
 
 
