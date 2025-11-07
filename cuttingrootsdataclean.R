@@ -16,9 +16,6 @@ cuttingroots <- read.csv("cuttingrootsFINAL.csv")
 cuttingroots$disease_percentage <- (
   (cuttingroots$yellow + cuttingroots$dry) / (cuttingroots$total) *100)
 
-#make it become an integer so that it does not have decimal places
-cuttingroots$disease_percentage <- as.integer(cuttingroots$disease_percentage)
-
 #get rid of the columns that we don't need anymore
 cuttingroots$total <- NULL
 cuttingroots$wilt <- NULL
@@ -48,3 +45,9 @@ cuttingroots_wide <- cuttingroots_wide %>%
 
 #Now you get to admire your clean data
 View(cuttingroots_wide)
+
+#Making a new file from the clean data for the anova
+write.csv(cuttingroots_wide, "cuttingroots_wide_clean.csv", row.names = FALSE)
+
+#Making a new file from the cl"ean data for the ggplot (long format)
+write.csv(cuttingroots, "cuttingroots_long_clean.csv", row.names = FALSE)
